@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantity Measurement App | Convert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-layer"></div>
+  <header class="top-nav">
+    <a class="brand" href="index.html">Quantity Measurement App</a>
+    <nav class="nav-links">
+      <a href="operations.html">Operations</a>
+      <a href="history.html">History</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Signup</a>
+    </nav>
+  </header>
+
+  <main class="page-wrap centered">
+    <section class="page-header reveal">
+      <p class="eyebrow">Convert</p>
+      <h1>Unit Conversion</h1>
+    </section>
+
+    <section class="panel reveal">
+      <form id="convert-form">
+        <div class="field">
+          <label>Measurement Type</label>
+          <div class="measurement-type-selector" id="measurementTypeSelector">
+            <div class="measurement-card" data-type="length"><span class="measurement-card-icon">📏</span>Length</div>
+            <div class="measurement-card" data-type="volume"><span class="measurement-card-icon">🧃</span>Volume</div>
+            <div class="measurement-card" data-type="weight"><span class="measurement-card-icon">⚖️</span>Weight</div>
+            <div class="measurement-card" data-type="temperature"><span class="measurement-card-icon">🌡️</span>Temperature</div>
+          </div>
+          <input id="measurementType" type="hidden" required />
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="inputValue">Value</label>
+            <input id="inputValue" type="number" step="any" placeholder="Enter value" required />
+          </div>
+          <div class="field">
+            <label for="fromUnit">From Unit</label>
+            <select id="fromUnit" required></select>
+          </div>
+          <div class="field">
+            <label for="toUnit">To Unit</label>
+            <select id="toUnit" required></select>
+          </div>
+        </div>
+        <div class="button-wrapper">
+          <button class="btn primary" type="submit">Convert</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="result-card reveal">
+      <h3>Result</h3>
+      <p id="convert-result" class="result-value muted">No conversion yet.</p>
+      <p id="convert-message" class="muted"></p>
+    </section>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/convert.js"></script>
+</body>
+</html>
