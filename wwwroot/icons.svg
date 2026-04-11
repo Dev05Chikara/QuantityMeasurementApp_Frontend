@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Main Brand Icon: Overlapping Angle Brackets -->
+  <symbol id="icon-brand" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Right-pointing angle (top) -->
+      <polyline points="20,15 55,40 20,65" />
+      <!-- Right-pointing angle (bottom, overlapping) -->
+      <polyline points="45,35 80,60 45,85" />
+    </g>
+  </symbol>
+
+  <!-- Convert Icon: Bidirectional Transformation -->
+  <symbol id="icon-convert" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Top arrow left -->
+      <polyline points="75,25 50,25 50,10" />
+      <polyline points="50,25 35,25" />
+      <!-- Bottom arrow right -->
+      <polyline points="25,75 50,75 50,90" />
+      <polyline points="50,75 65,75" />
+      <!-- Vertical connector -->
+      <line x1="50" y1="40" x2="50" y2="60" />
+    </g>
+  </symbol>
+
+  <!-- Compare Icon: Side-by-side Balance -->
+  <symbol id="icon-compare" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Left beam -->
+      <line x1="15" y1="50" x2="40" y2="50" />
+      <!-- Right beam -->
+      <line x1="60" y1="50" x2="85" y2="50" />
+      <!-- Left pan -->
+      <rect x="10" y="58" width="30" height="20" rx="2" />
+      <!-- Right pan -->
+      <rect x="60" y="58" width="30" height="20" rx="2" />
+      <!-- Balance point -->
+      <circle cx="50" cy="50" r="3" />
+      <!-- Left support -->
+      <line x1="25" y1="50" x2="25" y2="58" />
+      <!-- Right support -->
+      <line x1="75" y1="50" x2="75" y2="58" />
+    </g>
+  </symbol>
+
+  <!-- Calculate Icon: Dynamic Plus with Circles -->
+  <symbol id="icon-calculate" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Outer circle -->
+      <circle cx="50" cy="50" r="38" />
+      <!-- Plus sign -->
+      <line x1="50" y1="30" x2="50" y2="70" />
+      <line x1="30" y1="50" x2="70" y2="50" />
+    </g>
+  </symbol>
+
+  <!-- Length Icon: Measurement Scale -->
+  <symbol id="icon-length" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Main line -->
+      <line x1="20" y1="50" x2="80" y2="50" />
+      <!-- Left end mark -->
+      <line x1="20" y1="35" x2="20" y2="65" />
+      <!-- Right end mark -->
+      <line x1="80" y1="35" x2="80" y2="65" />
+      <!-- Middle tick -->
+      <line x1="50" y1="40" x2="50" y2="60" />
+      <!-- Quarter ticks -->
+      <line x1="35" y1="43" x2="35" y2="57" />
+      <line x1="65" y1="43" x2="65" y2="57" />
+    </g>
+  </symbol>
+
+  <!-- Volume Icon: Water/Container -->
+  <symbol id="icon-volume" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Container -->
+      <path d="M 30 20 L 25 40 L 25 75 Q 25 85 35 85 L 65 85 Q 75 85 75 75 L 75 40 L 70 20 Z" />
+      <!-- Liquid inside (wavy top) -->
+      <path d="M 28 55 Q 38 50 50 55 Q 62 60 72 55 L 72 75 Q 72 82 65 82 L 35 82 Q 28 82 28 75 Z" fill="currentColor" opacity="0.3" />
+      <!-- Wavy line for liquid surface -->
+      <path d="M 28 55 Q 38 50 50 55 Q 62 60 72 55" />
+    </g>
+  </symbol>
+
+  <!-- Weight Icon: Balance Scale -->
+  <symbol id="icon-weight" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Main beam -->
+      <line x1="20" y1="35" x2="80" y2="35" />
+      <!-- Central pivot -->
+      <circle cx="50" cy="35" r="4" fill="currentColor" />
+      <!-- Left pan chain -->
+      <line x1="35" y1="35" x2="35" y2="50" />
+      <!-- Right pan chain -->
+      <line x1="65" y1="35" x2="65" y2="50" />
+      <!-- Left pan -->
+      <rect x="20" y="50" width="30" height="18" rx="2" />
+      <!-- Right pan -->
+      <rect x="50" y="50" width="30" height="18" rx="2" />
+      <!-- Weight indicators (small circles in pans) -->
+      <circle cx="30" cy="62" r="3" fill="currentColor" />
+      <circle cx="65" cy="62" r="3" fill="currentColor" />
+      <!-- Dish lines for depth -->
+      <line x1="25" y1="68" x2="45" y2="68" />
+      <line x1="55" y1="68" x2="75" y2="68" />
+    </g>
+  </symbol>
+
+  <!-- Temperature Icon: Thermometer -->
+  <symbol id="icon-temperature" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Bulb -->
+      <circle cx="50" cy="72" r="12" />
+      <!-- Stem -->
+      <line x1="50" y1="20" x2="50" y2="60" />
+      <!-- Markings -->
+      <line x1="42" y1="30" x2="58" y2="30" />
+      <line x1="42" y1="42" x2="58" y2="42" />
+      <line x1="42" y1="54" x2="58" y2="54" />
+      <!-- Mercury inside (indicator) -->
+      <circle cx="50" cy="72" r="9" fill="currentColor" opacity="0.4" />
+    </g>
+  </symbol>
+
+  <!-- History Icon: Timeline/Clock -->
+  <symbol id="icon-history" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Clock circle -->
+      <circle cx="50" cy="50" r="35" />
+      <!-- Hour marks -->
+      <line x1="50" y1="20" x2="50" y2="25" />
+      <line x1="77" y1="50" x2="72" y2="50" />
+      <!-- Hour and minute hands -->
+      <line x1="50" y1="50" x2="50" y2="35" stroke-width="2.5" />
+      <line x1="50" y1="50" x2="62" y2="50" stroke-width="2.5" />
+      <!-- Center dot -->
+      <circle cx="50" cy="50" r="3" fill="currentColor" />
+    </g>
+  </symbol>
+</svg>

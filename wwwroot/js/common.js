@@ -2,7 +2,9 @@ const API_BASE_URL = "http://localhost:5000/api";
 
 // JWT Token Management
 function getAuthToken() {
-  return localStorage.getItem("authToken");
+  const token = localStorage.getItem("authToken");
+
+  return token;
 }
 
 function setAuthToken(token) {
@@ -14,7 +16,9 @@ function removeAuthToken() {
 }
 
 function isAuthenticated() {
-  return !!getAuthToken();
+  const hasToken = !!getAuthToken();
+
+  return hasToken;
 }
 
 function redirectToLogin() {
@@ -124,6 +128,7 @@ async function apiRequest(endpoint, options = {}, allowUnauthenticated = false) 
   // Add Authorization header if token exists and endpoint requires auth
   if (token && !endpoint.includes("/auth/")) {
     headers["Authorization"] = `Bearer ${token}`;
+
   }
 
   const response = await fetch(`${API_BASE_URL}${endpoint}`, {
@@ -135,7 +140,6 @@ async function apiRequest(endpoint, options = {}, allowUnauthenticated = false) 
     // Unauthorized - token expired or invalid
     if (allowUnauthenticated) {
       // For endpoints like history save that are optional without auth, just return silently
-      console.debug("Unauthenticated request to", endpoint, "- skipping");
       return null;
     }
     // For protected endpoints like history fetch, redirect to login
@@ -177,7 +181,7 @@ async function saveHistory(entry) {
       body: JSON.stringify(payload),
     }, true); // allowUnauthenticated = true
   } catch (error) {
-    console.debug("History save failed (may be unauthenticated):", error.message);
+    // History save failed silently for unauthenticated users
   }
 }
 

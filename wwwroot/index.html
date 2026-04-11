@@ -12,9 +12,12 @@
 <body>
   <div class="bg-layer"></div>
   <header class="top-nav">
-    <a class="brand" href="index.html">Quantity Measurement App</a>
+    <a class="brand" href="index.html">
+      <span class="brand-icon">∞</span>
+      <span>Quantity Measurement</span>
+    </a>
     <nav class="nav-links">
-      <a href="operations.html">Operations</a>
+      <a class="active" href="index.html">Home</a>
       <a href="history.html">History</a>
       <a href="login.html">Login</a>
       <a href="signup.html">Signup</a>
@@ -22,25 +25,36 @@
   </header>
 
   <main class="page-wrap hero-page">
-    <section class="hero-card reveal">
+    <section class="hero-section reveal">
       <p class="eyebrow">Measurement Made Easy</p>
-      <h1>Quantity Measurement</h1>
-      <p>Convert units, compare values, and perform calculations instantly.</p>
-      <div class="feature-grid">
-        <article class="mini-card">
-          <h3>Convert</h3>
-          <p>Convert between different units of measurement.</p>
-        </article>
-        <article class="mini-card">
-          <h3>Compare</h3>
-          <p>Compare two quantities in any units.</p>
-        </article>
-        <article class="mini-card">
-          <h3>Calculate</h3>
-          <p>Add, subtract, or divide quantities.</p>
-        </article>
+      <h1>Convert. Compare. Calculate — Seamlessly.</h1>
+      <p class="hero-description">Handle all your measurement needs in one place. Convert between units, compare quantities across different measurements (Length, Volume, Weight, Temperature), and perform instant calculations with precision.</p>
+    </section>
+
+    <section class="features-section reveal">
+      <div class="features-container">
+        <a href="convert.html" class="feature-item">
+          <div class="feature-icon">⇄</div>
+          <div class="feature-content">
+            <h3>Convert</h3>
+            <p>Convert any unit to another instantly across length, volume, weight, and temperature.</p>
+          </div>
+        </a>
+        <a href="compare.html" class="feature-item">
+          <div class="feature-icon">≈</div>
+          <div class="feature-content">
+            <h3>Compare</h3>
+            <p>Compare two quantities in different units to see which is larger or if they're equal.</p>
+          </div>
+        </a>
+        <a href="arithmetic.html" class="feature-item">
+          <div class="feature-icon">∑</div>
+          <div class="feature-content">
+            <h3>Calculate</h3>
+            <p>Perform arithmetic operations (add, subtract, divide) on measurements with automatic unit conversion.</p>
+          </div>
+        </a>
       </div>
-      <a class="btn primary" href="operations.html">Get Started</a>
     </section>
   </main>
 

@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }),
       });
 
+
       const output = `${formatNumber(input)} ${formatUnit(fromUnit)} = ${formatNumber(response.value)} ${formatUnit(toUnit)}`;
       resultEl.textContent = output;
       resultEl.className = "result-value";

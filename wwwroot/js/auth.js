@@ -2,14 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Check if user is already logged in on login page
   const isLoginPage = document.getElementById("login-form") !== null && document.getElementById("loginUsername") !== null;
   if (isLoginPage && isAuthenticated()) {
-    window.location.href = "operations.html";
+    window.location.href = "index.html";
     return;
   }
 
   // Check if user is already logged in on signup page
   const isSignupPage = document.getElementById("signup-form") !== null && document.getElementById("signupUsername") !== null;
   if (isSignupPage && isAuthenticated()) {
-    window.location.href = "operations.html";
+    window.location.href = "index.html";
     return;
   }
 
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
           body: JSON.stringify({ username, password }),
         });
 
-        setAuthToken(response.token);
+        setAuthToken(response.Token);
         showMessage(messageEl, "Login successful! Redirecting...", "success");
         setTimeout(() => {
           window.location.href = "operations.html";
