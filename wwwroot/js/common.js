@@ -21,9 +21,42 @@ function isAuthenticated() {
   return hasToken;
 }
 
+// Username Management
+function getUsername() {
+  return localStorage.getItem("username") || "Guest";
+}
+
+function setUsername(username) {
+  localStorage.setItem("username", username);
+  updateUserProfile();
+}
+
+function clearUsername() {
+  localStorage.removeItem("username");
+  updateUserProfile();
+}
+
+function updateUserProfile() {
+  const usernameDisplay = document.getElementById("usernameDisplay");
+  if (usernameDisplay) {
+    usernameDisplay.textContent = getUsername();
+  }
+}
+
 function redirectToLogin() {
+  removeAuthToken();
+  clearUsername();
   window.location.href = "login.html";
 }
+
+// Initialize user profile on page load
+document.addEventListener("DOMContentLoaded", () => {
+  // If not authenticated, clear the username
+  if (!isAuthenticated()) {
+    localStorage.removeItem("username");
+  }
+  updateUserProfile();
+});
 
 // Backend Unit Enums - Exact format from backend
 const UNIT_DEFINITIONS = {

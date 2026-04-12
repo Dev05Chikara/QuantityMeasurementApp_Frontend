@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         setAuthToken(response.Token);
+        setUsername(username);
         showMessage(messageEl, "Login successful! Redirecting...", "success");
         setTimeout(() => {
           window.location.href = "operations.html";
@@ -98,6 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
           }),
         });
 
+        setAuthToken(response.Token);
+        setUsername(username);
         showMessage(messageEl, "Account created! Redirecting to login...", "success");
         setTimeout(() => {
           window.location.href = "login.html";
@@ -114,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const logoutBtn = document.querySelector(".logout-btn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", (e) => {
+      clearUsername();
       e.preventDefault();
       removeAuthToken();
       window.location.href = "login.html";
