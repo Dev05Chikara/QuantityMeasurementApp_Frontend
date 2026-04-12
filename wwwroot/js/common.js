@@ -38,8 +38,26 @@ function clearUsername() {
 
 function updateUserProfile() {
   const usernameDisplay = document.getElementById("usernameDisplay");
+  const loginOption = document.getElementById("loginOption");
+  const signupOption = document.getElementById("signupOption");
+  const logoutOption = document.getElementById("logoutOption");
+  
   if (usernameDisplay) {
-    usernameDisplay.textContent = getUsername();
+    const username = getUsername();
+    usernameDisplay.textContent = username;
+  }
+  
+  // Show/hide dropdown options based on authentication status
+  if (isAuthenticated()) {
+    // Logged in user - show logout, hide login/signup
+    if (loginOption) loginOption.style.display = "none";
+    if (signupOption) signupOption.style.display = "none";
+    if (logoutOption) logoutOption.style.display = "block";
+  } else {
+    // Not logged in - show login/signup, hide logout
+    if (loginOption) loginOption.style.display = "block";
+    if (signupOption) signupOption.style.display = "block";
+    if (logoutOption) logoutOption.style.display = "none";
   }
 }
 
@@ -56,6 +74,17 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem("username");
   }
   updateUserProfile();
+  
+  // Add logout handler
+  const logoutOption = document.getElementById("logoutOption");
+  if (logoutOption) {
+    logoutOption.addEventListener("click", (e) => {
+      e.preventDefault();
+      removeAuthToken();
+      clearUsername();
+      window.location.href = "login.html";
+    });
+  }
 });
 
 // Backend Unit Enums - Exact format from backend
@@ -274,20 +303,6 @@ function updateNavigation() {
       link.style.display = isAuth ? "none" : "inline";
     }
   });
-
-  // Add logout button if authenticated and not already present
-  if (isAuth && !navLinks.querySelector(".logout-btn")) {
-    const logoutBtn = document.createElement("a");
-    logoutBtn.href = "#";
-    logoutBtn.className = "logout-btn";
-    logoutBtn.textContent = "Logout";
-    logoutBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      removeAuthToken();
-      window.location.href = "login.html";
-    });
-    navLinks.appendChild(logoutBtn);
-  }
 }
 
 // Call on every page load
