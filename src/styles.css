@@ -17,8 +17,9 @@
   --radius-md: 14px;
 }
 
-* {
-  box-sizing: border-box;
+html,
+body {
+  min-height: 100%;
 }
 
 body {
@@ -30,6 +31,11 @@ body {
     radial-gradient(900px 500px at 90% 10%, #402e4f 0%, transparent 48%),
     linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
   overflow-x: hidden;
+}
+
+app-root {
+  display: block;
+  min-height: 100vh;
 }
 
 .bg-layer {
@@ -148,7 +154,6 @@ body {
   width: 0;
 }
 
-/* User Profile Styles */
 .user-profile {
   display: flex;
   align-items: center;
@@ -182,7 +187,6 @@ body {
   white-space: nowrap;
 }
 
-/* Profile Dropdown Menu */
 .profile-dropdown {
   position: absolute;
   top: 100%;
@@ -230,15 +234,6 @@ body {
   background: rgba(76, 215, 208, 0.2);
   color: var(--accent-2);
   padding-left: 1.5rem;
-}
-
-.dropdown-item#logoutOption {
-  display: none;
-  color: #ff6b6b;
-}
-
-.dropdown-item#logoutOption:hover {
-  background: rgba(255, 107, 107, 0.1);
 }
 
 .page-wrap {
@@ -428,7 +423,6 @@ p {
   gap: 0.5rem;
 }
 
-/* Pair fields for grouped display like Value + Unit */
 .field-pair {
   display: flex;
   gap: 0.9rem;
@@ -461,7 +455,6 @@ select:focus {
   border-color: var(--accent-2);
 }
 
-/* Measurement Type Card Selection */
 .measurement-type-selector {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -578,7 +571,8 @@ select:focus {
 }
 
 @keyframes glowPulse {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 30px rgba(245, 158, 11, 0.15);
   }
   50% {
@@ -621,7 +615,8 @@ select:focus {
 }
 
 @keyframes authCardFloat {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -646,6 +641,39 @@ select:focus {
 
 .auth-card:hover::before {
   opacity: 1;
+}
+
+.auth-divider {
+  position: relative;
+  margin: 1.2rem 0 1rem;
+  text-align: center;
+}
+
+.auth-divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.auth-divider span {
+  position: relative;
+  display: inline-block;
+  padding: 0 0.75rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: rgba(24, 30, 41, 0.96);
+}
+
+.google-signin-slot {
+  display: flex;
+  justify-content: center;
+  min-height: 44px;
+  margin-bottom: 1.1rem;
 }
 
 .table-wrap {
@@ -709,7 +737,6 @@ th {
   backdrop-filter: blur(10px);
 }
 
-/* Centered Page Layout */
 .page-wrap.centered {
   display: flex;
   flex-direction: column;
@@ -717,7 +744,6 @@ th {
   justify-content: center;
 }
 
-/* Button Wrapper - Centers button on own row */
 .button-wrapper {
   display: flex;
   justify-content: center;
@@ -729,7 +755,6 @@ th {
   min-width: 200px;
 }
 
-/* Measurement Card with Icon */
 .measurement-card {
   display: flex;
   flex-direction: column;
@@ -776,7 +801,6 @@ th {
   }
 }
 
-/* Hero Page Animations */
 .hero-page {
   animation: heroPageSlide 0.8s ease;
 }
@@ -807,7 +831,6 @@ th {
   }
 }
 
-/* Feature Grid Animation */
 .feature-grid {
   animation: featureGridReveal 1s ease both;
 }
@@ -848,7 +871,6 @@ th {
   }
 }
 
-/* Card Grid Animation */
 .card-grid.stagger {
   animation: cardGridAppear 0.5s ease both;
 }
@@ -868,7 +890,6 @@ th {
   filter: drop-shadow(0 4px 12px rgba(76, 215, 208, 0.4));
 }
 
-/* Hero Section Styles */
 .hero-section {
   text-align: center;
   margin-bottom: 4rem;
@@ -899,7 +920,6 @@ th {
   margin-top: 0.5rem;
 }
 
-/* Features Section Styles */
 .features-section {
   background: linear-gradient(135deg, rgba(76, 215, 208, 0.05), rgba(245, 158, 11, 0.03));
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -968,7 +988,6 @@ a.feature-item {
   color: inherit;
 }
 
-/* History Page Improvements */
 .history-card {
   margin-top: 2rem;
 }
@@ -977,133 +996,3 @@ a.feature-item {
   margin-bottom: 2.5rem;
   padding-top: 1rem;
 }
-
-.table-wrap {
-  overflow-x: auto;
-}
-
-.table-wrap table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table-wrap table thead {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: linear-gradient(90deg, rgba(245, 158, 11, 0.15), transparent);
-}
-
-/* Enhanced Button Styles */
-.btn.primary {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.btn.primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  transition: left 0.3s ease;
-}
-
-.btn.primary:hover::before {
-  left: 100%;
-}
-
-.btn.primary:hover {
-  box-shadow: 0 12px 28px rgba(255, 138, 43, 0.4);
-  transform: translateY(-2px);
-}
-
-@media (max-width: 700px) {
-  .hero-section h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-description {
-    font-size: 1rem;
-    margin: 1rem 0 1.5rem;
-  }
-
-  .features-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .features-section {
-    padding: 2rem 1.5rem;
-  }
-
-  .feature-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .feature-content h3 {
-    font-size: 1.2rem;
-  }
-
-  .top-nav {
-    padding: 0.8rem 1.1rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 0.8rem;
-    width: 100%;
-  }
-
-  .user-profile {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .page-wrap {
-    width: 94vw;
-  }
-
-  .hero-card,
-  .panel,
-  .result-card,
-  .auth-card,
-  .history-card {
-    padding: 1rem;
-  }
-
-  .arithmetic-layout,
-  .convert-layout,
-  .compare-layout {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .measurement-section {
-    min-width: auto;
-  }
-
-  .measurement-type-selector.vertical .measurement-card {
-    width: 100%;
-  }
-
-  .action-card-icon {
-    font-size: 2.5rem;
-    height: 70px;
-  }
-
-  .table-wrap {
-    max-height: 400px;
-  }
-}
-
-
