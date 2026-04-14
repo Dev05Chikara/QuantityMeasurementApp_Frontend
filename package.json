@@ -1,0 +1,12 @@
+{
+  "name": "quantity-measurement-app",
+  "version": "1.0.0",
+  "description": "Quantity Measurement App - Frontend",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "http-server wwwroot -p 8080 -c-1 -o"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
