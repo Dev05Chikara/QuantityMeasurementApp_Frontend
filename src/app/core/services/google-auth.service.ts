@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 type GoogleCredentialCallback = (response: GoogleCredentialResponse) => void;
 
@@ -69,11 +70,10 @@ export class GoogleAuthService {
   }
 
   private getClientId(): string {
-    const meta = document.querySelector<HTMLMetaElement>('meta[name="google-signin-client_id"]');
-    const clientId = meta?.content.trim();
+    const clientId = environment.googleClientId?.trim();
 
-    if (!clientId || clientId.includes('PASTE_YOUR_GOOGLE_CLIENT_ID_HERE')) {
-      throw new Error('Google Client ID is missing. Update meta[name="google-signin-client_id"] in src/index.html.');
+    if (!clientId || clientId.includes('YOUR_GOOGLE_CLIENT_ID_HERE')) {
+      throw new Error('Google Client ID is missing. Update googleClientId in src/environments/environment.ts.');
     }
 
     return clientId;

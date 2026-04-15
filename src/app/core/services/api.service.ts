@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private readonly apiBaseUrl = 'http://localhost:5000/api';
+  private readonly apiBaseUrl = environment.apiUrl;
 
   constructor(private readonly authService: AuthService, private readonly router: Router) {}
 
