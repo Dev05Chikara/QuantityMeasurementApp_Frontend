@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: quantity-measurement-frontend
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npx serve -s dist/quantity-measurement-app
+    envVars:
+      - key: NODE_ENV
+        value: production

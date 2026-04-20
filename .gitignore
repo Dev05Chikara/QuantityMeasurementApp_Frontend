@@ -4,8 +4,8 @@ npm-debug.log
 yarn-error.log
 
 # Angular
-/.angular/
-/dist/
+.angular/
+dist/
 
 # IDE
 .vscode/
